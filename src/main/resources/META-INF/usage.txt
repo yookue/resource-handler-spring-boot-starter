@@ -1,0 +1,12 @@
+# Resource Handler for Spring Boot Starter
+# Copyright (c) 2022 Yookue Ltd. All rights reserved.
+# https://yookue.com
+
+
+spring:
+    resource-handler:
+        resource-mapping:
+            versional:
+                '/foo/**': 'classpath:/foo/'
+            original:
+                '/bar/**': 'classpath:/bar/'
