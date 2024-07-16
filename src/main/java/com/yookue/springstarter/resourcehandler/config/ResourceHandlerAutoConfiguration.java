@@ -20,15 +20,17 @@ package com.yookue.springstarter.resourcehandler.config;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.autoconfigure.web.WebProperties;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
@@ -64,13 +66,17 @@ import lombok.RequiredArgsConstructor;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty(prefix = ResourceHandlerAutoConfiguration.PROPERTIES_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
+@AutoConfigureAfter(value = WebMvcAutoConfiguration.class)
 @RequiredArgsConstructor
 @EnableConfigurationProperties(value = ResourceHandlerProperties.class)
 @SuppressWarnings({"JavadocDeclaration", "JavadocLinkAsPlainText"})
 public class ResourceHandlerAutoConfiguration implements InitializingBean, WebMvcConfigurer {
     public static final String PROPERTIES_PREFIX = "spring.resource-handler";    // $NON-NLS-1$
     private final ApplicationContext applicationContext;
+
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     private final WebProperties webProperties;
+
     private final ResourceHandlerProperties handlerProperties;
 
     @Override
