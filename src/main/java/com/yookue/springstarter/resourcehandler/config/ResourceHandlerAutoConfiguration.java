@@ -73,10 +73,7 @@ import lombok.RequiredArgsConstructor;
 public class ResourceHandlerAutoConfiguration implements InitializingBean, WebMvcConfigurer {
     public static final String PROPERTIES_PREFIX = "spring.resource-handler";    // $NON-NLS-1$
     private final ApplicationContext applicationContext;
-
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     private final WebProperties webProperties;
-
     private final ResourceHandlerProperties handlerProperties;
 
     @Override
