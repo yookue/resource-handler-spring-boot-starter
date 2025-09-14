@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.resourcehandler.property;
+package cn.unikue.springstarter.resourcehandler.property;
 
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import com.yookue.commonplexus.javaseutil.constant.CharVariantConst;
-import com.yookue.commonplexus.javaseutil.constant.StringVariantConst;
-import com.yookue.commonplexus.springutil.constant.AntPathConst;
-import com.yookue.springstarter.resourcehandler.config.ResourceHandlerAutoConfiguration;
+import cn.unikue.commonplexus.javaseutil.constant.CharVariantConst;
+import cn.unikue.commonplexus.javaseutil.constant.StringVariantConst;
+import cn.unikue.commonplexus.springutil.constant.AntPathConst;
+import cn.unikue.springstarter.resourcehandler.config.ResourceHandlerAutoConfiguration;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

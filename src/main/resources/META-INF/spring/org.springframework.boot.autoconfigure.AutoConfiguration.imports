@@ -1,5 +1,5 @@
 # Resource Handler for Spring Boot Starter
-# Copyright (c) 2022 Yookue Ltd. All rights reserved.
-# https://yookue.com
+# Copyright (c) 2022 Unikue Ltd. All rights reserved.
+# https://unikue.cn
 
-com.yookue.springstarter.resourcehandler.config.ResourceHandlerAutoConfiguration
+cn.unikue.springstarter.resourcehandler.config.ResourceHandlerAutoConfiguration
